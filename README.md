@@ -1,0 +1,168 @@
+# 🗂️ Task Management System
+
+A **full-stack Task Management application** with a **React.js** frontend, **Node.js/Express.js** backend, and **MongoDB** database.  
+This system lets users create, assign, track, and manage tasks efficiently.
+
+---
+
+## 🚀 Features
+✅ **Task Management** – Create, edit, delete, and view tasks  
+✅ **User Management** – Add and manage users  
+✅ **Task Assignment** – Assign tasks to specific users  
+✅ **Status Tracking** – Track task progress (Pending, In Progress, Completed)  
+✅ **Deadline Management** – Set and monitor task deadlines  
+✅ **Filtering & Sorting** – Filter tasks by status/deadline and sort by criteria  
+✅ **Dashboard Analytics** – View task statistics and overview  
+✅ **Responsive Design** – Works on desktop and mobile devices
+
+---
+
+## 🛠️ Tech Stack
+**Frontend**
+- ⚛️ React.js 18  
+- 🔀 React Router DOM  
+- 🌐 Axios (API calls)  
+- 📦 Context API (state management)  
+- 🎨 CSS3 (styling)
+
+**Backend**
+- 🟢 Node.js  
+- 🚂 Express.js  
+- 🍃 MongoDB with Mongoose  
+- 🔓 CORS enabled
+
+---
+
+## 📋 Prerequisites
+Make sure you have installed:
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [MongoDB](https://www.mongodb.com/) (local or Atlas)
+- npm or yarn package manager
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/task-management-system.git
+cd task-management-system
+```
+2️⃣ Backend Setup
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Create environment file
+echo "MONGODB_URL=mongodb://localhost:27017/taskmanager" > .env
+echo "PORT=5000" >> .env
+
+# Start the backend server
+npm start
+
+Backend will run on 👉 http://localhost:5000
+
+3️⃣ Frontend Setup
+# Open a new terminal and navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the frontend development server
+npm run dev
+
+Frontend will run on 👉 http://localhost:3000
+
+🗄️ Database Setup
+
+Option 1: Local MongoDB
+
+Install MongoDB locally
+
+Start MongoDB service
+
+The application will automatically create the database
+
+Option 2: MongoDB Atlas (Cloud)
+
+Create a free MongoDB Atlas
+ account
+
+Create a cluster and get your connection string
+
+Update the .env file:
+MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
+
+🌐 API Endpoints
+👤 User
+Method	Endpoint	Description	Request Body
+GET	/user	Get all users	-
+POST	/user	Create a new user	{ "name": "string", "email": "string" }
+✅ Task
+Method	Endpoint	Description	Request Body
+GET	/task	Get all tasks (supports filters & sorting)	-
+POST	/task	Create a new task	{ "title": "...", "description": "...", "status": "pending", "deadline": "YYYY-MM-DD", "assignedTo": "user@email.com" }
+PUT	/task/:id	Update a task	Same as POST
+DELETE	/task/:id	Delete a task	-
+Query Parameters (for GET /task):
+status → Filter by status (pending, in-progress, completed)
+deadline → Filter by deadline (YYYY-MM-DD)
+sortBy → createdAt, deadline, title
+sortOrder → asc or desc
+
+🏃 Running the Application
+
+1. Start MongoDB (if using local installation)
+
+2. Start backend:
+```
+cd backend
+npm start
+```
+
+3. Start frontend:
+```
+cd frontend
+npm run dev
+```
+
+4. Open 👉 http://localhost:3000
+  
+🔧 Environment Variables
+Create a .env file inside backend:
+```
+MONGODB_URL=mongodb://localhost:27017/taskmanager
+PORT=5000
+```
+
+🐛 Troubleshooting
+CORS Errors: Make sure backend CORS is configured to allow your frontend origin
+
+MongoDB Connection Error: Check if MongoDB is running and your connection string is correct
+
+Port Already in Use: Change the PORT in .env or stop the running process
+
+🤝 Contributing
+
+Fork the repository
+
+Create your feature branch
+```
+git checkout -b feature/AmazingFeature
+```
+
+Commit your changes
+```
+git commit -m "Add AmazingFeature"
+Push to the branch
+git push origin feature/AmazingFeature
+```
+
+Open a Pull Request 🎉
+
+👥 Author
+
+Aryan Sinha – GitHub
