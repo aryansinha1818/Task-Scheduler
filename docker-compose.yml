@@ -1,0 +1,46 @@
+# Remove the version line since it's obsolete
+services:
+  # Your Backend Service
+  backend:
+    image: aryansinha1818/task_scheduler-backend:latest # Use the backend lunchbox
+    ports:
+      - "5000:5000" # Door number 5000
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URL=mongodb://mongodb:27017/taskmanager
+    depends_on:
+      - mongodb # Wait for database first
+
+  # Your Frontend Service
+  frontend:
+    image: aryansinha1818/task_scheduler-frontend:latest # Use the frontend lunchbox
+    ports:
+      - "3000:3000" # Door number 3000
+    depends_on:
+      - backend # Wait for backend first
+    environment:
+      - VITE_API_URL=http://localhost:5000
+
+  # Database Service
+  mongodb:
+    image: mongo:6.0 # Use ready-made MongoDB
+    ports:
+      - "27017:27017" # Database door
+    volumes:
+      - mongodb_aryan_data:/data/db # Save data permanently
+
+  # MongoDB UI (Mongo Express)
+  mongo-express:
+    image: mongo-express:latest
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: secret
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_aryan_data: # Storage space for database
