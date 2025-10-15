@@ -1,3 +1,7 @@
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas%20or%20Local-green?logo=mongodb)](https://mongodb.com/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker)](https://docker.com/)
+
 # 🗂️ Task Management System
 
 A **full-stack Task Management application** with a **React.js** frontend, **Node.js/Express.js** backend, and **MongoDB** database.  
@@ -34,12 +38,50 @@ This system lets users create, assign, track, and manage tasks efficiently.
 ---
 
 ## 📋 Prerequisites
-Make sure you have installed:
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [MongoDB](https://www.mongodb.com/) (local or Atlas)
-- npm or yarn package manager
+
+- [Node.js](https://nodejs.org/) (v14+) — *only if running without Docker*
+- [MongoDB](https://www.mongodb.com/) — *optional if using Docker*
+- [Docker](https://www.docker.com/) & Docker Compose (recommended)
+- npm or yarn
 
 ---
+## 🐳 Docker Support
+
+This application is fully containerized using **Docker** and **Docker Compose** for easy local setup.
+
+### Run with Docker
+
+1. Ensure [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) are installed.
+2. From the project root, run:
+   ```bash
+   docker-compose up --build
+   ```
+3. The app will be available at:
+* Frontend: http://localhost:3000
+* Backend: http://localhost:5000
+
+
+---
+
+### 2. **Update `.env` Note for Docker Users**
+
+In your **Environment Variables** section, add:
+
+> 🐳 **When using Docker**, you don’t need to create a `.env` file manually—the `docker-compose.yml` should define environment variables and network links. However, if running without Docker, follow the steps below.
+
+---
+
+### 3. **Add `docker-compose.yml` Overview** (Optional but helpful)
+
+If you want to show off your setup cleanly:
+
+```md
+### 📦 Services in `docker-compose.yml`
+- `frontend`: React app (port 3000)
+- `backend`: Node.js + Express API (port 5000)
+- `mongo`: MongoDB instance (port 27017, internal)
+```
+
 
 ## ⚙️ Installation & Setup
 
