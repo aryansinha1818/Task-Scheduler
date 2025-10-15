@@ -59,31 +59,9 @@ This application is fully containerized using **Docker** and **Docker Compose** 
 3. The app will be available at:
 * Frontend: http://localhost:3000
 * Backend: http://localhost:5000
-
-
 ---
 
-### 2. **Update `.env` Note for Docker Users**
-
-In your **Environment Variables** section, add:
-
-> 🐳 **When using Docker**, you don’t need to create a `.env` file manually—the `docker-compose.yml` should define environment variables and network links. However, if running without Docker, follow the steps below.
-
----
-
-### 3. **Add `docker-compose.yml` Overview** (Optional but helpful)
-
-If you want to show off your setup cleanly:
-
-```md
-### 📦 Services in `docker-compose.yml`
-- `frontend`: React app (port 3000)
-- `backend`: Node.js + Express API (port 5000)
-- `mongo`: MongoDB instance (port 27017, internal)
-```
-
-
-## ⚙️ Installation & Setup
+## ⚙️ Manual Setup (Without Docker)
 
 ### 1️⃣ Clone the Repository
 ```bash
