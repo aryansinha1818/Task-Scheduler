@@ -157,32 +157,7 @@ Create a .env file inside backend:
 MONGODB_URL=mongodb://localhost:27017/taskmanager
 PORT=5000
 ```
+🙋‍♂️ 
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aryan-sinha-877698212/)
 
-🐛 Troubleshooting
-CORS Errors: Make sure backend CORS is configured to allow your frontend origin
-
-MongoDB Connection Error: Check if MongoDB is running and your connection string is correct
-
-Port Already in Use: Change the PORT in .env or stop the running process
-
-🤝 Contributing
-
-Fork the repository
-
-Create your feature branch
-```
-git checkout -b feature/AmazingFeature
-```
-
-Commit your changes
-```
-git commit -m "Add AmazingFeature"
-Push to the branch
-git push origin feature/AmazingFeature
-```
-
-Open a Pull Request 🎉
-
-👥 Author
-
-Aryan Sinha – GitHub
+[![gmail](https://img.shields.io/badge/gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aryan.sinha1818@gmail.com)
