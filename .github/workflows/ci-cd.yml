@@ -1,0 +1,43 @@
+name: Task Management App CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install backend dependencies
+        run: |
+          npm install
+
+      - name: Run backend tests
+        run: |
+          npm test
+
+      - name: Build Docker image
+        run: |
+          docker build -t aryan/task-app:latest .
+
+      - name: Log in to Docker Hub
+        env:
+          DOCKER_USERNAME: aryansinha1818
+          DOCKER_PASSWORD: abc123dckr_pat_SixyYikRv4gUSOJ2rXnSOy47wmA
+        run: |
+          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push aryan/task-app:latest
