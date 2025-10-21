@@ -3,7 +3,7 @@ name: Task Management App CI/CD
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t aryan/task-app:latest .
+          docker build -t aryansinha1818/task-app:latest .
 
       - name: Log in to Docker Hub
         env:
@@ -40,4 +40,4 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push aryan/task-app:latest
+          docker push aryansinha1818/task-app:latest
