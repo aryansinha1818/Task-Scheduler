@@ -33,8 +33,8 @@ jobs:
 
       - name: Log in to Docker Hub
         env:
-          DOCKER_USERNAME: aryansinha1818
-          DOCKER_PASSWORD: abc123dckr_pat_SixyYikRv4gUSOJ2rXnSOy47wmA
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 
