@@ -31,7 +31,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t aryansinha1818/task-app:latest .
+          docker build -t aryansinha1818/task-app:latest ./backend
 
       - name: Log in to Docker Hub
         env:
